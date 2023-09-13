@@ -1,17 +1,20 @@
 pipeline {
     agent any
     stages {
-    parallel {
-            stage('test') {
-                steps {
-                    sh 'python3 -m pytest test_add.py'
+        stage('Run Tests and Sleep') {
+            parallel {
+                stage('Test') {
+                    steps {
+                        sh 'python3 -m pytest test_add.py'
+                    }
                 }
-            }
-            stage('sleep') {
-                steps {
-                    sleep(time: 3, unit: 'SECONDS')
+                stage('Sleep') {
+                    steps {
+                        sleep(time: 3, unit: 'SECONDS')
+                    }
                 }
             }
         }
     }
 }
+
