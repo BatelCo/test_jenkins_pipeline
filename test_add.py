@@ -15,3 +15,8 @@ def test_add_negative_numbers():
 def test_add_mixed_numbers():
     result = add(5, -3)
     assert result == 2
+
+
+if __name__ == "__main__":
+    import pytest
+    pytest.main()
