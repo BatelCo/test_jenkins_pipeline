@@ -1,7 +1,7 @@
 pipline {
     agent any
     stages {
-        stage('test' {
+        stage('test') {
             steps {
                 sh 'python -m pytest'
         }
